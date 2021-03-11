@@ -11,7 +11,6 @@ TODO:
 - [ ] CI. github actions for tests, `gofmt -s`, `go vet`, `go lint`
 - [ ] badges. build, version, coverage, https://goreportcard.com/.
 - [ ] changelog https://keepachangelog.com
-- [ ] move options to cli. use https://golang.org/pkg/flag/ instead of env vars.
 - [ ] write contributing.
 
 ## Background
@@ -25,6 +24,23 @@ TODO: explaing what it does.
 ## Usage
 
 TODO: how to use the cli. describe CLI options
+
+```
+Usage
+  $ shipator [options] target
+
+Options
+  -placeholder string
+        Placeholder in the target (default "__ENV__")
+  -prefix string
+        Prefix of the env vars to inject (default "REACT_APP")
+
+Examples
+  $ shipator build/index.html
+  $ shipator -prefix REACT_APP -placeholder __ENV__ build/index.html
+  $ shipator -placeholder __VARS__ build/index.html
+  $ shipator -prefix VUE_APP build/index.htm
+```
 
 ## Example
 

@@ -2,6 +2,7 @@ package main
 
 import (
 	"encoding/json"
+	"flag"
 	"fmt"
 	"io/ioutil"
 	"os"
@@ -9,26 +10,41 @@ import (
 )
 
 func main() {
-	target, ok := os.LookupEnv("SHIPATOR_TARGET")
+	var placeholder string
+	var prefix string
 
-	if !ok {
-		panic("Env var SHIPATOR_TARGET not defined")
+	flag.StringVar(&placeholder, "placeholder", "__ENV__", "Placeholder in the target")
+	flag.StringVar(&prefix, "prefix", "REACT_APP", "Prefix of the env vars to inject")
+	flag.Usage = func() {
+		fmt.Printf("Usage\n")
+		fmt.Printf("  $ shipator [options] target\n")
+		fmt.Printf("\n")
+		fmt.Printf("Options\n")
+		flag.PrintDefaults()
+		fmt.Printf("\n")
+		fmt.Printf("Examples\n")
+		fmt.Printf("  $ shipator build/index.html\n")
+		fmt.Printf("  $ shipator -prefix REACT_APP -placeholder __ENV__ build/index.html\n")
+		fmt.Printf("  $ shipator -placeholder __VARS__ build/index.html\n")
+		fmt.Printf("  $ shipator -prefix VUE_APP build/index.html\n")
 	}
 
-	placeholder, ok := os.LookupEnv("SHIPATOR_PLACEHOLDER")
+	flag.Parse()
 
-	if !ok {
-		panic("Env var SHIPATOR_PLACEHOLDER not defined")
+	target := flag.Arg(0)
+	if target == "" {
+		fmt.Printf("Argument Error: target is not defined\n\n")
+
+		flag.Usage()
+		os.Exit(1)
 	}
-
-	fmt.Println("[shipator] 1-4: Reading env vars")
 
 	env := map[string]string{}
 
 	for _, kv := range os.Environ() {
 		key := strings.Split(kv, "=")[0]
 
-		if strings.HasPrefix(key, "REACT_APP") || key == "NODE_ENV" {
+		if strings.HasPrefix(key, prefix) || key == "NODE_ENV" {
 			env[key] = os.Getenv(key)
 		}
 	}
@@ -38,17 +54,15 @@ func main() {
 		panic("Failed to encoded JSON")
 	}
 
-	fmt.Println("[shipator] 2-4: Reading template")
-
 	data, err := ioutil.ReadFile(target)
 
-	fmt.Println("[shipator] 3-4: Injecting env vars")
 	updatedContent := strings.Replace(string(data), placeholder, string(encodedEnv), -1)
 
 	f, err := os.Create(target)
 	defer f.Close()
 
-	fmt.Println("[shipator] 4-4: Writing template")
 	f.WriteString(updatedContent)
 	f.Sync()
+
+	fmt.Printf("[OK] %s - placeholder %s was replaced by env vars prefixed by %s\n", target, placeholder, prefix)
 }
