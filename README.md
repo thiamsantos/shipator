@@ -3,13 +3,11 @@
 Inject environment variables at runtime into your SPA bundle.
 
 TODO:
-- [ ] Add a default placeholder: `__ENV__`
-- [ ] Write tests
 - [ ] Crate a logo
 - [ ] Write readme. delete old readme.
 - [ ] Release CLI, maybe using github releases. https://goreleaser.com/ ?
 - [ ] CI. github actions for tests, `gofmt -s`, `go vet`, `go lint`
-- [ ] badges. build, version, coverage, https://goreportcard.com/.
+- [ ] badges. build, version, https://goreportcard.com/.
 - [ ] changelog https://keepachangelog.com
 - [ ] write contributing.
 
