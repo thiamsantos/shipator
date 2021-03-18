@@ -1,14 +1,18 @@
 # shipator
 
+[![GitHub release](https://img.shields.io/github/v/release/brainnco/shipator)](https://github.com/brainnco/shipator/releases/latest)
+[![CI](https://github.com/brainnco/shipator/workflows/CI/badge.svg?branch=main)](https://github.com/brainnco/shipator/actions/workflows/CI.yml?query=branch%3Amain)
+[![License](https://img.shields.io/github/license/brainnco/shipator)](LICENSE)
+[![Go Report Card](https://goreportcard.com/badge/github.com/brainnco/shipator)](https://goreportcard.com/report/github.com/brainnco/shipator)
+
 Inject environment variables at runtime into your SPA bundle.
 
 TODO:
-- [ ] Crate a logo
+
+- [ ] Create a logo
 - [ ] Write readme. delete old readme.
 - [ ] Release CLI, maybe using github releases. https://goreleaser.com/ ?
-- [ ] badges. build, version, https://goreportcard.com/.
-- [ ] changelog https://keepachangelog.com
-- [ ] write contributing.
+- [ ] Official docker image?
 
 ## Background
 
