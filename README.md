@@ -6,7 +6,6 @@ TODO:
 - [ ] Crate a logo
 - [ ] Write readme. delete old readme.
 - [ ] Release CLI, maybe using github releases. https://goreleaser.com/ ?
-- [ ] CI. github actions for tests, `gofmt -s`, `go vet`, `go lint`
 - [ ] badges. build, version, https://goreportcard.com/.
 - [ ] changelog https://keepachangelog.com
 - [ ] write contributing.

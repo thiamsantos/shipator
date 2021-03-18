@@ -1,0 +1,41 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+jobs:
+  test:
+    strategy:
+      matrix:
+        include:
+          - go-version: 1.14
+          - go-version: 1.15
+          - go-version: 1.16
+            go-fmt: true
+            go-vet: true
+            go-lint: true
+    runs-on: ubuntu-latest
+    name: Go ${{ matrix.go-version }}
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-go@v2
+        with:
+          go-version: ${{ matrix.go-version }}
+      - name: Build
+        run: go build -v ./...
+      - name: Test
+        run: go test -v ./...
+      - name: Formatter
+        run: sh bin/gofmt-check.sh
+        if: matrix.go-fmt
+      - name: Vet
+        run: go vet .
+        if: matrix.go-vet
+      - name: Lint
+        run: |
+          go get -u golang.org/x/lint/golint
+          golint -set_exit_status=1 ./...
+        if: matrix.go-lint
