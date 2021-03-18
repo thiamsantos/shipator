@@ -11,7 +11,6 @@ TODO:
 
 - [ ] Create a logo
 - [ ] Write readme. delete old readme.
-- [ ] Release CLI, maybe using github releases. https://goreleaser.com/ ?
 - [ ] Official docker image?
 
 ## Background
