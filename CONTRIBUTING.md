@@ -12,8 +12,7 @@ Found a problem? Want a new feature? First of all see if your issue or idea has 
 If don't, just open a [new clear and descriptive issue][new-issue].
 
 ## Submitting pull requests
-Pull requests are the greatest contributions, so be sure they are focused in scope, and do avoid unrelated commits.
-And submit your pull request after making sure that all tests pass and they are covering 100% of the code.
+Pull requests are the greatest contributions, so be sure they are focused in scope.
 
 - [Fork][fork] it!
 - Clone your fork: `git clone https://github.com/<your-username>/shipator`
