@@ -1,9 +1,9 @@
 # shipator
 
-[![GitHub release](https://img.shields.io/github/v/release/brainnco/shipator)](https://github.com/brainnco/shipator/releases/latest)
 [![CI](https://github.com/brainnco/shipator/workflows/CI/badge.svg?branch=main)](https://github.com/brainnco/shipator/actions/workflows/CI.yml?query=branch%3Amain)
-[![License](https://img.shields.io/github/license/brainnco/shipator)](LICENSE)
+[![GitHub release](https://img.shields.io/github/v/release/brainnco/shipator)](https://github.com/brainnco/shipator/releases/latest)
 [![Go Report Card](https://goreportcard.com/badge/github.com/brainnco/shipator)](https://goreportcard.com/report/github.com/brainnco/shipator)
+[![License](https://img.shields.io/github/license/brainnco/shipator)](https://github.com/brainnco/shipator/blob/main/LICENSE)
 
 Inject environment variables into static files at runtime.
 
