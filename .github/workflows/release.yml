@@ -16,4 +16,5 @@ jobs:
         goos: linux
         goarch: amd64
         goversion: 'https://dl.google.com/go/go1.15.linux-amd64.tar.gz'
-        extra_files: LICENSE README.md
+        sha256sum: true
+        md5sum: false
