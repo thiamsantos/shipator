@@ -77,7 +77,7 @@ RUN yarn install --frozen-lockfile
 COPY . /app
 RUN yarn build
 
-FROM brainnco/shipator:0.1.0-rc5
+FROM brainnco/shipator:0.1.0
 COPY --from=builder /app/build /app/shipator/html
 ```
 
