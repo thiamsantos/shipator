@@ -12,7 +12,7 @@ import (
 
 var out io.Writer = os.Stdout
 
-const version = "0.1.0-rc0"
+const version = "0.1.0-rc1"
 
 func main() {
 	var placeholder string
