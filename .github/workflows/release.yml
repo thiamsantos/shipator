@@ -9,12 +9,33 @@ jobs:
     name: release linux/amd64
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
-    - uses: wangyoucao577/go-release-action@v1.15
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        goos: linux
-        goarch: amd64
-        goversion: 'https://dl.google.com/go/go1.15.linux-amd64.tar.gz'
-        sha256sum: true
-        md5sum: false
+      - uses: actions/checkout@v2
+      - uses: wangyoucao577/go-release-action@v1.15
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          goos: linux
+          goarch: amd64
+          goversion: 'https://dl.google.com/go/go1.15.linux-amd64.tar.gz'
+          sha256sum: true
+          md5sum: false
+
+      - name: Get current tag version
+        run: echo "::set-output name=tag::$(git describe --tags --abbrev=0 | sed 's/v//')"
+        id: current_tag
+
+      - name: Login to DockerHub
+        uses: docker/login-action@v1
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+      - name: Build and push
+        id: docker_build
+        uses: docker/build-push-action@v2
+        with:
+          context: docker
+          push: true
+          tags: brainnco/shipator:${{ steps.current_tag.outputs.tag }},brainnco/shipator:latest
+
+      - name: Image digest
+        run: echo ${{ steps.docker_build.outputs.digest }}
