@@ -34,15 +34,30 @@ Options
         Placeholder in the target (default "__ENV__")
   -prefix string
         Prefix of the env vars to inject (default "REACT_APP")
+  -version
+        Prints current version
 
 Examples
   $ shipator build/index.html
   $ shipator -prefix REACT_APP -placeholder __ENV__ build/index.html
   $ shipator -placeholder __VARS__ build/index.html
-  $ shipator -prefix VUE_APP build/index.htm
+  $ shipator -prefix VUE_APP build/index.html
 ```
 
 ## Example
+
+```docker
+FROM node:12.16.1-alpine as builder
+WORKDIR /app
+COPY yarn.lock /app/yarn.lock
+COPY package.json /app/package.json
+RUN yarn install --frozen-lockfile
+COPY . /app
+RUN yarn build
+
+FROM brainnco/shipator:0.1.0-rc0
+COPY --from=builder /app/build /app/shipator/html
+```
 
 TODO: example deploying a react application with ngnix + k8s.
 
