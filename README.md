@@ -11,7 +11,7 @@ TODO:
 
 - [ ] Create a logo
 - [ ] Write readme. delete old readme.
-- [ ] Official docker image?
+- [ ] Changelog.
 
 ## Background
 
