@@ -126,11 +126,11 @@ Examples
 
 ## Changelog
 
-See the [changelog](CHANGELOG.md).
+See the [changelog](https://github.com/brainnco/shipator/blob/main/CHANGELOG.md).
 
 ## Contributing
 
-See the [contributing file](CONTRIBUTING.md).
+See the [contributing file](https://github.com/brainnco/shipator/blob/main/CONTRIBUTING.md).
 
 ## License
 
@@ -138,7 +138,7 @@ Copyright 2020 brainn.co.
 
 Shipator source code is released under Apache 2 License.
 
-Check [LICENSE](LICENSE) file for more information.
+Check [LICENSE](https://github.com/brainnco/shipator/blob/main/LICENSE) file for more information.
 
 [CRA]: https://create-react-app.dev
 [Node.js]: https://nodejs.org
