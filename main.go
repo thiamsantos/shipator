@@ -12,15 +12,19 @@ import (
 
 var out io.Writer = os.Stdout
 
+const version = "0.1.0-rc0"
+
 func main() {
 	var placeholder string
 	var prefix string
+	var versionFlag bool
 
 	cli := flag.NewFlagSet("shipator", flag.ExitOnError)
 
 	cli.SetOutput(out)
 	cli.StringVar(&placeholder, "placeholder", "__ENV__", "Placeholder in the target")
 	cli.StringVar(&prefix, "prefix", "REACT_APP", "Prefix of the env vars to inject")
+	cli.BoolVar(&versionFlag, "version", false, "Prints current version")
 	cli.Usage = func() {
 		fmt.Fprintf(out, "Usage\n")
 		fmt.Fprintf(out, "  $ shipator [options] target\n")
@@ -36,6 +40,11 @@ func main() {
 	}
 
 	cli.Parse(os.Args[1:])
+
+	if versionFlag {
+		fmt.Fprintf(out, "%s\n", version)
+		os.Exit(0)
+	}
 
 	target := cli.Arg(0)
 	if target == "" {
