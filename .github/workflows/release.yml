@@ -46,3 +46,4 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_PASSWORD }}
           repository: brainnco/shipator
+          short-description: Inject environment variables into static files at runtime
