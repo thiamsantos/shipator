@@ -1,4 +1,4 @@
-# shipator
+<img src="./logo.svg" height="120" alt="Shipator" />
 
 [![CI](https://github.com/brainnco/shipator/workflows/CI/badge.svg?branch=main)](https://github.com/brainnco/shipator/actions/workflows/CI.yml?query=branch%3Amain)
 [![GitHub release](https://img.shields.io/github/v/release/brainnco/shipator)](https://github.com/brainnco/shipator/releases/latest)
@@ -134,7 +134,7 @@ See the [contributing file](https://github.com/brainnco/shipator/blob/main/CONTR
 
 ## License
 
-Copyright 2020 brainn.co.
+Copyright 2020 © Brainn Co.
 
 Shipator source code is released under Apache 2 License.
 
