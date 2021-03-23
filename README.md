@@ -1,4 +1,4 @@
-<img src="./logo.svg" height="120" alt="Shipator" />
+<img src="https://raw.githubusercontent.com/brainnco/shipator/main/logo.svg" height="120" alt="Shipator" />
 
 [![CI](https://github.com/brainnco/shipator/workflows/CI/badge.svg?branch=main)](https://github.com/brainnco/shipator/actions/workflows/CI.yml?query=branch%3Amain)
 [![GitHub release](https://img.shields.io/github/v/release/brainnco/shipator)](https://github.com/brainnco/shipator/releases/latest)
