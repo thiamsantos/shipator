@@ -35,7 +35,7 @@ jobs:
         with:
           context: docker
           push: true
-          tags: Finbits/shipator:${{ steps.current_tag.outputs.tag }},Finbits/shipator:latest
+          tags: finbits/shipator:${{ steps.current_tag.outputs.tag }},finbits/shipator:latest
 
       - name: Image digest
         run: echo ${{ steps.docker_build.outputs.digest }}
@@ -45,5 +45,5 @@ jobs:
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_PASSWORD }}
-          repository: Finbits/shipator
+          repository: finbits/shipator
           short-description: Inject environment variables into static files at runtime
