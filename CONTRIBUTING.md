@@ -23,7 +23,7 @@ Pull requests are the greatest contributions, so be sure they are focused in sco
 - Push to the branch: `git push origin my-new-feature`
 - Submit a pull request with full remarks documenting your changes.
 
-[fork]: https://github.com/brainnco/shipator/fork
-[code-of-conduct]: https://github.com/brainnco/shipator/blob/main/CODE_OF_CONDUCT.md
-[issue]: https://github.com/brainnco/shipator/issues
-[new-issue]: https://github.com/brainnco/shipator/issues/new
+[fork]: https://github.com/Finbits/shipator/fork
+[code-of-conduct]: https://github.com/Finbits/shipator/blob/main/CODE_OF_CONDUCT.md
+[issue]: https://github.com/Finbits/shipator/issues
+[new-issue]: https://github.com/Finbits/shipator/issues/new

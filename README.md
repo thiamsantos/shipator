@@ -1,9 +1,9 @@
-<img src="https://raw.githubusercontent.com/brainnco/shipator/main/logo.svg" height="120" alt="Shipator" />
+<img src="https://raw.githubusercontent.com/Finbits/shipator/main/logo.svg" height="120" alt="Shipator" />
 
-[![CI](https://github.com/brainnco/shipator/workflows/CI/badge.svg?branch=main)](https://github.com/brainnco/shipator/actions/workflows/CI.yml?query=branch%3Amain)
-[![GitHub release](https://img.shields.io/github/v/release/brainnco/shipator)](https://github.com/brainnco/shipator/releases/latest)
-[![Go Report Card](https://goreportcard.com/badge/github.com/brainnco/shipator)](https://goreportcard.com/report/github.com/brainnco/shipator)
-[![License](https://img.shields.io/github/license/brainnco/shipator)](https://github.com/brainnco/shipator/blob/main/LICENSE)
+[![CI](https://github.com/Finbits/shipator/workflows/CI/badge.svg?branch=main)](https://github.com/Finbits/shipator/actions/workflows/CI.yml?query=branch%3Amain)
+[![GitHub release](https://img.shields.io/github/v/release/Finbits/shipator)](https://github.com/Finbits/shipator/releases/latest)
+[![Go Report Card](https://goreportcard.com/badge/github.com/Finbits/shipator)](https://goreportcard.com/report/github.com/Finbits/shipator)
+[![License](https://img.shields.io/github/license/Finbits/shipator)](https://github.com/Finbits/shipator/blob/main/LICENSE)
 
 Inject environment variables into static files at runtime.
 
@@ -77,7 +77,7 @@ RUN yarn install --frozen-lockfile
 COPY . /app
 RUN yarn build
 
-FROM brainnco/shipator:1.0.0
+FROM Finbits/shipator:1.0.0
 COPY --from=builder /app/build /app/shipator/html
 ```
 
@@ -103,7 +103,7 @@ could be placed in a configmap, with different values for each deployment enviro
 
 ## CLI Usage
 
-You can also use the shipator CLI directly. You can download it on the [releases page](https://github.com/brainnco/shipator/releases).
+You can also use the shipator CLI directly. You can download it on the [releases page](https://github.com/Finbits/shipator/releases).
 
 ```
 Usage
@@ -126,19 +126,19 @@ Examples
 
 ## Changelog
 
-See the [changelog](https://github.com/brainnco/shipator/blob/main/CHANGELOG.md).
+See the [changelog](https://github.com/Finbits/shipator/blob/main/CHANGELOG.md).
 
 ## Contributing
 
-See the [contributing file](https://github.com/brainnco/shipator/blob/main/CONTRIBUTING.md).
+See the [contributing file](https://github.com/Finbits/shipator/blob/main/CONTRIBUTING.md).
 
 ## License
 
-Copyright 2020 © Brainn Co.
+Copyright 2021 © Finbits.
 
 Shipator source code is released under Apache 2 License.
 
-Check [LICENSE](https://github.com/brainnco/shipator/blob/main/LICENSE) file for more information.
+Check [LICENSE](https://github.com/Finbits/shipator/blob/main/LICENSE) file for more information.
 
 [CRA]: https://create-react-app.dev
 [Node.js]: https://nodejs.org

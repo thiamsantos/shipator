@@ -11,7 +11,7 @@ COPY default.conf /etc/nginx/conf.d/
 WORKDIR /shipator
 COPY start.sh /shipator/start.sh
 
-RUN wget "https://github.com/brainnco/shipator/releases/download/v$SHIPATOR_VERSION/shipator-v$SHIPATOR_VERSION-linux-amd64.tar.gz" && \
+RUN wget "https://github.com/Finbits/shipator/releases/download/v$SHIPATOR_VERSION/shipator-v$SHIPATOR_VERSION-linux-amd64.tar.gz" && \
     tar -xf "shipator-v$SHIPATOR_VERSION-linux-amd64.tar.gz" && \
     rm "shipator-v$SHIPATOR_VERSION-linux-amd64.tar.gz" && \
     mv shipator /usr/bin/shipator && \
