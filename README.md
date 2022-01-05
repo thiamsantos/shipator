@@ -77,7 +77,7 @@ RUN yarn install --frozen-lockfile
 COPY . /app
 RUN yarn build
 
-FROM Finbits/shipator:1.0.1
+FROM Finbits/shipator:1.0.2
 COPY --from=builder /app/build /app/shipator/html
 ```
 
